@@ -5,8 +5,7 @@ let map;
 class GoogleMaps extends React.Component {
     constructor(props){
         super(props)
-
-
+        
         this.initMap = this.initMap.bind(this)
     }
 
@@ -56,9 +55,10 @@ class GoogleMaps extends React.Component {
             <div 
             style = {{
                 width: 500,
-                height: 500
+                height: 500,
+                margin:'auto'
                 }}
-            id = "map"/>
+            id = 'map'/>
             </div>
         )   
     }

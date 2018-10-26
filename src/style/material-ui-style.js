@@ -121,12 +121,12 @@ module.exports = {
       },
       MuiPaper:{
         root:{
-          // maxWidth: 800,
+          maxWidth: 800,
           margin: '7px',
           marginBottom:20,
           flexGrow: 1,
           // position: 'absolute',
-          width:'100%',
+          width:'95%',
           height: '100%',
         }
       },

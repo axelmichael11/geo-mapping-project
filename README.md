@@ -15,8 +15,9 @@ Requirements
 4) Overlay current weather data.
 - using default heatmap property listed to inject heatmap data.
 
-5) Show demographic data for a selected country.
-- What kind of demographic data?
+5) Show demographic data for a selected country. x
+- What kind of demographic data? 
+- showing demographic data for one country, query needs to select every country.
 
 
 
