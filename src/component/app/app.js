@@ -11,12 +11,11 @@ import randomColor from 'randomcolor'; // import the script
 import CardCase from '../poll-card-design/card-case'
 
 
-import Chart from '../charts/d3-bar/chart'
-import ResponsiveChart from '../charts/d3-bar/responsive-chart'
+// import SimpleMap from '../google-maps/index'
+import GoogleMap from '../google-maps/google-maps-react'
+import GoogleMaps from '../google-maps/from-scratch'
 
-import SimpleMap from '../google-maps/index'
-
-
+// import SimpleMap from '../google-maps/index'
 
 //These will be used, to store id of the user in the database...
 
@@ -26,8 +25,6 @@ import SimpleMap from '../google-maps/index'
 import { withStyles } from '@material-ui/core/styles';
 
   
-const ResponsiveBarChart = ResponsiveChart(Chart)
-
 const styles = theme =>({
   container: theme.overrides.MuiPaper.root,
   cardHeader:theme.overrides.PollCard.cardHeader,
@@ -54,47 +51,42 @@ class App extends React.Component {
         this.state ={
             
         }
-     
-        this.renderGraphData = this.renderGraphData.bind(this)
     }
-
-
-  renderGraphData() {
-        return [
-          {x:'A', y:20},
-          {x:'B', y:30},
-          {x:'C', y:40},
-      ]
-  }
-
-  renderTotalVotes(){
-
-    console.log('GRAPH DATA', this.renderGraphData())
-      return (
-        <ResponsiveBarChart 
-          data={this.renderGraphData()}/>
-        
-          
-      )
-  }
-
 
     render(){
         // console.log("MC DATA", this.state, this.state.pollData)
+        const style={
+          width: '97%',
+          height: '80%',
+          position: 'absolute',
+          display: 'block',
+          margin: '7px',
+
+      }
+        
         return(
-            <div>
+            <div
+            // style={style}
+            >
                 <CardCase 
                 {...this.props}
+                title={'Geo-Mapping-Project'}
                 style={{
-                    height:'100%'
+                  height:'100%'
                 }}>
-                <SimpleMap
-                center={{
+
+                {/* <GoogleMap
+                  apiKey={__GOOGLE_MAPS_JS_API__}
+                  language={'English'}
+                  center={{
                     lat: 59.95,
                     lng: 30.33
-                }}
-                zoom={1}
-                />
+                  }}
+                  zoom={3}
+                  initMap={this.initMap}
+                /> */}
+                <GoogleMaps/>
+
                 </CardCase>
             </div>
         )

@@ -50,27 +50,24 @@ const CardCase = ({...props}) =>{
     //classes, theme, props.pollActions, poll,
     return (
     <div className={props.classes.container}>
-    <Paper square elevation={2} className={props.classes.container}>
-                <Card style={{padding:7}}>
+    {/* <Paper square elevation={2} className={props.classes.container}> */}
+                <Card style={{padding:7
+                
+                }}>
                 <CardHeader
                     // action={props.pollActions}
                     className={props.classes.cardHeader}
-                    // title={props.poll.author_username}
+                    title={props.title}
                     classes={{
                         title: props.classes.cardHeader
                     }}
                 />
-                {props.children}
                 <CardContent>
-                <Typography variant="subheading" component="p">
-                        Suhh dude
-                    </Typography>
-                <Typography variant="subheading" component="p">
-                        Poll Expiration: NEVER
-                    </Typography>
+                {props.children}
                 </CardContent>
+                
                 </Card>
-        </Paper>
+        {/* </Paper> */}
     </div>
     )
 }

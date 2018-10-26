@@ -121,10 +121,13 @@ module.exports = {
       },
       MuiPaper:{
         root:{
-          maxWidth: 600, 
-          margin: 'auto',
+          // maxWidth: 800,
+          margin: '7px',
           marginBottom:20,
-          flexGrow: 1
+          flexGrow: 1,
+          // position: 'absolute',
+          width:'100%',
+          height: '100%',
         }
       },
       MuiAppBar:{
@@ -174,7 +177,7 @@ module.exports = {
 
       MuiCardActions:{
        root:{
-        maxWidth: 600, 
+        // maxWidth: 600, 
         margin: 'auto',
         flexGrow: 1,
         backgroundColor:primaryColor,
@@ -183,7 +186,7 @@ module.exports = {
       },
       MuiCollapse:{
         container:{
-          maxWidth: 600, 
+          // maxWidth: 600, 
           margin: 'auto',
           backgroundColor:secondaryColor,
           color:primaryColor,

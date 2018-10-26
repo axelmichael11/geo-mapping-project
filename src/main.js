@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import App from './component/poll-landing-container/app'
+import App from './component/app/app'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import MaterialStyles from './style/material-ui-style'
 
