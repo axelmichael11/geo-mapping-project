@@ -19,7 +19,7 @@ console.log("PRODUCTION", production)
 if (production){
   plugins = [
     new EnvironmentPlugin(['NODE_ENV']),
-    new HTMLPlugin({template: `${__dirname}/src/index.html`}),
+    new HTMLPlugin({template: `${__dirname}/index.html`}),
     new DefinePlugin({
       __DEBUG__: JSON.stringify(production),
       __API_URL__: JSON.stringify(process.env.API_URL),
@@ -30,48 +30,13 @@ if (production){
       __AUTH0_REDIRECT_URI__:JSON.stringify(process.env.AUTH0_REDIRECT_URI),
       __ORIGIN__: JSON.stringify(process.env.ORIGIN),
       __GOOGLE_MAPS_JS_API__:JSON.stringify(process.env.GOOGLE_MAPS_JS_API),
+      __PORT__:JSON.stringify(process.env.PORT),
     }),
   ]
 } else {
   plugins = [
     new EnvironmentPlugin(['NODE_ENV']),
-    new HTMLPlugin({template: `${__dirname}/src/index.html`}),
-    
-    // new HardSourceWebpackPlugin({
-    //   // Either an absolute path or relative to webpack's options.context.
-    //   cacheDirectory: 'node_modules/.cache/hard-source/[confighash]',
-    //   // Either a string of object hash function given a webpack config.
-    //   configHash: function(webpackConfig) {
-    //     // node-object-hash on npm can be used to build this.
-    //     return require('node-object-hash')({sort: false}).hash(webpackConfig);
-    //   },
-    //   // Either false, a string, an object, or a project hashing function.
-    //   environmentHash: {
-    //     root: process.cwd(),
-    //     directories: [],
-    //     files: [
-    //       'package-lock.json', 
-    //       // 'yarn.lock'
-    //     ],
-    //   },
-    //   // An object.
-    //   info: {
-    //     // 'none' or 'test'.
-    //     mode: 'none',
-    //     // 'debug', 'log', 'info', 'warn', or 'error'.
-    //     level: 'debug',
-    //   },
-    //   // Clean up large, old caches automatically.
-    //   cachePrune: {
-    //     // Caches younger than `maxAge` are not considered for deletion. They must
-    //     // be at least this (default: 2 days) old in milliseconds.
-    //     maxAge: 2 * 24 * 60 * 60 * 1000,
-    //     // All caches together must be larger than `sizeThreshold` before any
-    //     // caches will be deleted. Together they must be at least this
-    //     // (default: 50 MB) big in bytes.
-    //     sizeThreshold: 50 * 1024 * 1024
-    //   },
-    // }),
+    new HTMLPlugin({template: `${__dirname}/index.html`}),
     
     new DefinePlugin({
       __DEBUG__: JSON.stringify(production),
@@ -83,6 +48,7 @@ if (production){
       __AUTH0_REDIRECT_URI__:JSON.stringify(process.env.AUTH0_REDIRECT_URI),
       __ORIGIN__: JSON.stringify(process.env.ORIGIN),
       __GOOGLE_MAPS_JS_API__:JSON.stringify(process.env.GOOGLE_MAPS_JS_API),
+      __PORT__:JSON.stringify(process.env.PORT),
     }),
   ]
 }
