@@ -2,10 +2,13 @@
 import React from 'react'
 let map;
 
+
+const apiKey = __GOOGLE_MAPS_JS_API__ || process.env.GOOGLE_MAPS_JS_API;
+
 class GoogleMaps extends React.Component {
     constructor(props){
         super(props)
-        
+
         this.initMap = this.initMap.bind(this)
     }
 
@@ -45,7 +48,7 @@ class GoogleMaps extends React.Component {
         const script = document.createElement('script')
         script.async = true
         script.defer = true
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${__GOOGLE_MAPS_JS_API__}&callback=initMap`
+        script.src = `https://maps.googleapis.com/maps/api/js?v=3key=${apiKey}&callback=initMap`
         document.head.appendChild(script)
   }
 
